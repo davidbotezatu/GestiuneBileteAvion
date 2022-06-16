@@ -6,9 +6,10 @@ using System.Web.Mvc;
 
 namespace GestiuneBileteAvion.Controllers
 {
-    public class HomeController : Controller
+    public class ClientController : Controller
     {
-        public ActionResult Index()
+        // GET: Customer
+        public ActionResult Lista()
         {
             return View();
         }
