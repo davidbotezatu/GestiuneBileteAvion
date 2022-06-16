@@ -1,0 +1,8 @@
+﻿@model GestiuneBileteAvion.Models.Bilet
+
+@{
+    ViewBag.Title = Model.LoculPlecarii + " - " + Model.LoculSosirii;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@String.Format(Model.LoculPlecarii + " - " + Model.LoculSosirii)</h2>

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<GestiuneBileteAvion.Models.Bilet>
+@{
+    ViewBag.Title = "Bilete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Bilete</h2>
+
+@if (!Model.Any())
+{
+    <p>Nu exista nici un bilet.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Bilet</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var bilet in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(bilet.LoculPlecarii, "DetaliiBilet", "Bilet", new { id = bilet.Id }, null)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

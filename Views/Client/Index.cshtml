@@ -1,0 +1,30 @@
+﻿@model IEnumerable<GestiuneBileteAvion.Models.Client>
+@{
+    ViewBag.Title = "Clienti";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Clienti</h2>
+
+@if (!Model.Any())
+{
+    <p>Nu exista nici un client.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>Client</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var client in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(client.Nume, "DetaliiClient", "Client", new { id = client.Id }, null)</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

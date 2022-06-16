@@ -23,7 +23,7 @@ namespace GestiuneBileteAvion
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/lumen-bootstrap.css",
+                      "~/Content/cerulean-bootstrap.css",
                       "~/Content/site.css"));
         }
     }
