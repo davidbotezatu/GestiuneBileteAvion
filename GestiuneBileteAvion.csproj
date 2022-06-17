@@ -198,6 +198,14 @@
     <Compile Include="Migrations\202206162103532_FinalizeClient.designer.cs">
       <DependentUpon>202206162103532_FinalizeClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206171055172_ApplyConstraintsOnDbColumns.cs" />
+    <Compile Include="Migrations\202206171055172_ApplyConstraintsOnDbColumns.designer.cs">
+      <DependentUpon>202206171055172_ApplyConstraintsOnDbColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202206171137498_CreateBiletDb.cs" />
+    <Compile Include="Migrations\202206171137498_CreateBiletDb.designer.cs">
+      <DependentUpon>202206171137498_CreateBiletDb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Client.cs" />
@@ -206,8 +214,6 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="ViewModel\BiletViewModel.cs" />
-    <Compile Include="ViewModel\ClientViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -294,6 +300,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206162103532_FinalizeClient.resx">
       <DependentUpon>202206162103532_FinalizeClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206171055172_ApplyConstraintsOnDbColumns.resx">
+      <DependentUpon>202206171055172_ApplyConstraintsOnDbColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206171137498_CreateBiletDb.resx">
+      <DependentUpon>202206171137498_CreateBiletDb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

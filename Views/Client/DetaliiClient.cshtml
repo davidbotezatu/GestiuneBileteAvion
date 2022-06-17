@@ -5,4 +5,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.Nume</h2>
+<h2>@(Model.Nume + " " + Model.Prenume)</h2>
+
+<ul>
+    <li><b>ID</b>: @Model.Id</li>
+    <li><b>Nume</b>: @Model.Nume</li>
+    <li><b>Prenume</b>: @Model.Prenume</li>
+    <li><b>CNP</b>: @Model.Cnp</li>
+    <li><b>Adresa</b>: @Model.Adresa</li>
+    <li><b>Tip Client</b>: @Model.TipClient</li>
+</ul>
