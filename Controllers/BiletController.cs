@@ -27,16 +27,41 @@ namespace GestiuneBileteAvion.Controllers
             return View(bilet);
         }
 
-        public ActionResult DetaliiBilet(int id)
+        public ActionResult BiletNou()
         {
-            var client = _context.Bilete.SingleOrDefault(b => b.Id == id);
+            return View();
+        }
 
-            if (client == null)
+        [HttpPost]
+        public ActionResult Creare(Bilet bilet)
+        {
+            if (bilet.Id == 0)
             {
-                return HttpNotFound();
+                _context.Bilete.Add(bilet);
+            }
+            else
+            {
+                var biletInDb = _context.Bilete.Single(b => b.Id == bilet.Id);
+
+                biletInDb.LoculPlecarii = bilet.LoculPlecarii;
+                biletInDb.LoculSosirii = bilet.LoculSosirii;
+                biletInDb.DataPlecarii = bilet.DataPlecarii;
+                biletInDb.Pret = bilet.Pret;
             }
 
-            return View(client);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Bilet");
+        }
+
+        public ActionResult EditareBilet(int id)
+        {
+            var bilet = _context.Bilete.SingleOrDefault(b => b.Id == id);
+
+            if (bilet == null)
+                return HttpNotFound();
+
+            return View(bilet);
         }
     }
 }

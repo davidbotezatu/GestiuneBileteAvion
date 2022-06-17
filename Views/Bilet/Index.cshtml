@@ -6,6 +6,10 @@
 
 <h2>Bilete</h2>
 
+<p>
+    @Html.ActionLink("Adauga Bilet", "BiletNou", "Bilet", null, new { @class = "btn btn-primary" })
+</p>
+
 @if (!Model.Any())
 {
     <p>Nu exista nici un bilet.</p>
@@ -24,8 +28,8 @@ else
             @foreach (var bilet in Model)
             {
                 <tr>
-                    <td>@Html.ActionLink(bilet.LoculPlecarii + " - " + bilet.LoculSosirii, "DetaliiBilet", "Bilet", new { id = bilet.Id }, null)</td>
-                    <td>@bilet.DataPlecarii</td>
+                    <td>@Html.ActionLink(bilet.LoculPlecarii + " - " + bilet.LoculSosirii, "EditareBilet", "Bilet", new { id = bilet.Id }, null)</td>
+                    <td>@bilet.DataPlecariiShort</td>
                     <td>@bilet.Pret</td>
                 </tr>
             }

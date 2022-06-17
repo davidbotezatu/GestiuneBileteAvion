@@ -6,6 +6,10 @@
 
 <h2>Clienti</h2>
 
+<p>
+    @Html.ActionLink("Adauga Client", "ClientNou", "Client", null, new { @class = "btn btn-primary" })
+</p>
+
 @if (!Model.Any())
 {
     <p>Nu exista nici un client.</p>
@@ -26,7 +30,7 @@ else
         @foreach (var client in Model)
         {
             <tr>
-                <td>@Html.ActionLink(client.Nume, "DetaliiClient", "Client", new { id = client.Id }, null)</td>
+                <td>@client.Nume</td>
                 <td>@client.Prenume</td>
                 <td>@client.Cnp</td>
                 <td>@client.Adresa</td>
@@ -36,3 +40,4 @@ else
         </tbody>
     </table>
 }
+

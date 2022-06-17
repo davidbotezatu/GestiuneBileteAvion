@@ -1,0 +1,36 @@
+﻿@model GestiuneBileteAvion.Models.Bilet
+
+@{
+    ViewBag.Title = "Editare Bilet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Editare Oferta</h2>
+<h3>@Model.LoculPlecarii - @Model.LoculSosirii</h3>
+
+@using (Html.BeginForm("Creare", "Bilet"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.LoculPlecarii)
+        @Html.TextBoxFor(m => m.LoculPlecarii, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.LoculSosirii)
+        @Html.TextBoxFor(m => m.LoculSosirii, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.DataPlecarii)
+        @Html.TextBoxFor(m => m.DataPlecarii, new { @class = "form-control", type = "date"})
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Pret)
+        @Html.TextBoxFor(m => m.Pret, new { @class = "form-control" })
+    </div>
+
+    @Html.HiddenFor(m => m.Id)
+
+    <button type="submit" class="btn btn-primary">Salvare</button>
+}

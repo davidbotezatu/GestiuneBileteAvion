@@ -17,13 +17,16 @@ namespace GestiuneBileteAvion.Models
         [Required]
         [StringLength(50)]
         public string Prenume { get; set; }
+
         public string Adresa { get; set; }
 
         [Required]
         [StringLength(13)]
+        [Display(Name = "CNP")]
         public string Cnp { get; set; }
 
         [Required]
+        [Display(Name = "Tip Client")]
         public string TipClient { get; set; }
     }
 }

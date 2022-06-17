@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 
 
 namespace GestiuneBileteAvion.Controllers
@@ -28,16 +29,19 @@ namespace GestiuneBileteAvion.Controllers
             return View(clienti);
         }
 
-        public ActionResult DetaliiClient(int id)
+
+        public ViewResult ClientNou()
         {
-            var client = _context.Clienti.SingleOrDefault(c => c.Id == id);
+            return View();
+        }
 
-            if (client == null)
-            {
-                return HttpNotFound();
-            }
+        [HttpPost]
+        public ActionResult Creare(Client client)
+        {
+            _context.Clienti.Add(client);
+            _context.SaveChanges();
 
-            return View(client);
+            return RedirectToAction("Index", "Client");
         }
     }
 }

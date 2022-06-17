@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -20,7 +21,10 @@ namespace GestiuneBileteAvion.Models
         public String LoculSosirii { get; set; }
 
         [Required]
-        public DateTime? DataPlecarii { get; set; }
+        public DateTime DataPlecarii { get; set; }
+
+        [NotMapped]
+        public string DataPlecariiShort => DataPlecarii.ToShortDateString();
 
         [Required]
         public float Pret { get; set; }
