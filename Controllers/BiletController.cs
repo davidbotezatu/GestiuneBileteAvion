@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using GestiuneBileteAvion.Models;
 
 namespace GestiuneBileteAvion.Controllers
@@ -35,6 +36,11 @@ namespace GestiuneBileteAvion.Controllers
         [HttpPost]
         public ActionResult Creare(Bilet bilet)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("BiletNou");
+            }
+
             if (bilet.Id == 0)
             {
                 _context.Bilete.Add(bilet);

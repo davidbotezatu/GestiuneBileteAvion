@@ -12,19 +12,20 @@ namespace GestiuneBileteAvion.Models
         [Required]
         public int Id { get; set; }
 
+        [Display(Name = "De la")]
         [Required]
         [StringLength(50)]
         public String LoculPlecarii { get; set; }
 
+        [Display(Name = "Pana la")]
         [Required]
         [StringLength(50)]
         public String LoculSosirii { get; set; }
 
+        [Display(Name = "Data plecarii")]
+        [DataType(DataType.Date)]
         [Required]
         public DateTime DataPlecarii { get; set; }
-
-        [NotMapped]
-        public string DataPlecariiShort => DataPlecarii.ToShortDateString();
 
         [Required]
         public float Pret { get; set; }

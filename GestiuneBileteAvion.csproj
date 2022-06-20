@@ -214,6 +214,10 @@
     <Compile Include="Migrations\202206171847585_FinalVersion.designer.cs">
       <DependentUpon>202206171847585_FinalVersion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202206190855532_AddDataTypeOnDataPlecarii.cs" />
+    <Compile Include="Migrations\202206190855532_AddDataTypeOnDataPlecarii.designer.cs">
+      <DependentUpon>202206190855532_AddDataTypeOnDataPlecarii.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Client.cs" />
@@ -321,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202206171847585_FinalVersion.resx">
       <DependentUpon>202206171847585_FinalVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202206190855532_AddDataTypeOnDataPlecarii.resx">
+      <DependentUpon>202206190855532_AddDataTypeOnDataPlecarii.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -38,6 +38,11 @@ namespace GestiuneBileteAvion.Controllers
         [HttpPost]
         public ActionResult Creare(Client client)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("ClientNou");
+            }
+
             _context.Clienti.Add(client);
             _context.SaveChanges();
 

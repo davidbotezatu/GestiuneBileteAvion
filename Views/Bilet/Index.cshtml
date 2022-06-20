@@ -29,7 +29,7 @@ else
             {
                 <tr>
                     <td>@Html.ActionLink(bilet.LoculPlecarii + " - " + bilet.LoculSosirii, "EditareBilet", "Bilet", new { id = bilet.Id }, null)</td>
-                    <td>@bilet.DataPlecariiShort</td>
+                    <td>@bilet.DataPlecarii.Date.ToString("dd-MMM-yyyy")</td>
                     <td>@bilet.Pret</td>
                 </tr>
             }
