@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -22,10 +23,17 @@ namespace GestiuneBileteAvion.Controllers
             _context.Dispose();
         }
 
-        public ViewResult Index()
+        public ViewResult Index(string localitate)
         {
-            var bilet = _context.Bilete.ToList();
-            return View(bilet);
+            var bilete = from s in _context.Bilete
+                select s;
+
+            if (!String.IsNullOrEmpty(localitate))
+            {
+                bilete = bilete.Where(s => s.LoculPlecarii.Contains(localitate) || s.LoculSosirii.Contains(localitate));
+            }
+
+            return (View(bilete.ToList()));
         }
 
         public ActionResult BiletNou()
