@@ -26,6 +26,7 @@ else
             <th>Ruta</th>
             <th>Data</th>
             <th>Pret</th>
+            <th>Client</th>
         </tr>
         </thead>
         <tbody>
@@ -39,8 +40,8 @@ else
         }
         </tbody>
     </table>
-
-    <p>
-        @Html.ActionLink("Adauga Bilet", "BiletNou", "Bilet", null, new { @class = "btn btn-primary" })
-    </p>
 }
+
+<p>
+    @Html.ActionLink("Adauga Bilet", "BiletNou", "Bilet", null, new { @class = "btn btn-primary" })
+</p>
